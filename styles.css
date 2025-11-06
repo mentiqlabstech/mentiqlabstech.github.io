@@ -563,9 +563,9 @@ body {
 
 .app-card {
     background: var(--white);
-    padding: 32px;
+    padding: 28px;
     border: 1px solid var(--gray-200);
-    border-radius: 16px;
+    border-radius: 12px;
     text-align: left;
     transition: all 0.3s ease;
     display: flex;
@@ -576,90 +576,98 @@ body {
 
 .app-card:hover {
     border-color: var(--primary-blue);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
 .app-logo {
-    width: 72px;
-    height: 72px;
-    margin-bottom: 20px;
-    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    border-radius: 12px;
     background: linear-gradient(135deg, var(--gray-100), var(--gray-50));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 32px;
     transition: transform 0.3s ease;
-    box-shadow: var(--shadow-sm);
 }
 
 .app-card:hover .app-logo {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: scale(1.05);
 }
 
 .app-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--gray-900);
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.3;
 }
 
 .app-description {
     color: var(--gray-600);
     line-height: 1.6;
-    margin-bottom: 24px;
-    font-size: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
     flex-grow: 1;
 }
 
 .app-actions {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     margin-top: auto;
+    flex-wrap: wrap;
 }
 
-.btn-view-details {
-    display: inline-block;
-    padding: 12px 24px;
+.app-actions .btn-primary {
+    flex: 1;
+    padding: 12px 16px;
     background: var(--primary-blue);
     color: var(--white);
     text-decoration: none;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 15px;
-    transition: all 0.3s ease;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
     text-align: center;
     border: none;
-}
-
-.btn-view-details:hover {
-    background: #2563eb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-}
-
-.btn-privacy-link {
     display: inline-block;
-    padding: 12px 24px;
-    background: transparent;
-    color: var(--gray-700);
-    text-decoration: none;
-    border: 1.5px solid var(--gray-300);
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    text-align: center;
 }
 
-.btn-privacy-link:hover {
-    background: var(--gray-50);
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
+.app-actions .btn-primary:hover {
+    background: #2563eb;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+}
+
+.app-actions .btn-secondary {
+    padding: 12px 16px;
+    background: transparent;
+    color: var(--gray-600);
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    text-align: center;
+    display: inline-block;
+}
+
+.app-actions .btn-secondary:hover {
+    background: var(--gray-100);
+    color: var(--gray-900);
+}
+
+@media (max-width: 640px) {
+    .app-actions {
+        flex-direction: column;
+    }
+    
+    .app-actions .btn-primary,
+    .app-actions .btn-secondary {
+        width: 100%;
+    }
 }
 
 /* Contact Section */
