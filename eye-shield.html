@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Eye Guard - Blue Light Filter | Mentiq Labs Tech</title>
-    <meta name="description" content="Privacy Policy for Eye Guard - Blue Light Filter - A privacy-first mobile application." />
+    <meta name="description" content="Privacy Policy for Eye Guard - Blue Light Filter: A privacy-first mobile application." />
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <div class="privacy-page">
         <div class="privacy-container">
@@ -60,31 +58,28 @@
                     <ul class="privacy-card-list">
                         <li>Screen dimming level and filter strength</li>
                         <li>Blue light filter mode, color temperature, and presets</li>
-                        <li>Advanced filter options (sepia, grayscale, invert, etc.)</li>
-                        <li>Theme preference (system/light/dark)</li>
-                        <li>Scheduling preferences (enabled/disabled, sunrise/sunset vs. custom times, chosen times)</li>
-                        <li>Onboarding status and feature toggles (e.g., auto-adjust)</li>
+                        <li>Filter mode selection (Screen Dimmer or Blue Light Filter)</li>
+                        <li>Brightness level and filter strength preferences</li>
+                        <li>Advanced filter options (color temperature, filter presets, custom RGB values)</li>
+                        <li>Auto-adjust feature toggle (enabled/disabled)</li>
+                        <li>Onboarding status (first run flag)</li>
                     </ul>
-                    
-                    <p class="privacy-card-text"><strong>Optional Coarse Location (on-device only):</strong></p>
-                    <p class="privacy-card-text">
-                        If you enable the "sunrise/sunset" scheduling option, the app may access your approximate location (ACCESS_COARSE_LOCATION) to estimate local sunrise and sunset times. This location is read from the device's last known location if permission is granted. The location is used only to compute times on your device, is not stored by the app, and is not sent to any server.
-                    </p>
                     
                     <p class="privacy-card-text"><strong>Sensors (on-device only):</strong></p>
                     <p class="privacy-card-text">
-                        If you enable auto-adjust, the app reads ambient light sensor values in real time to adjust brightness and filter strength. These readings are not stored or transmitted.
+                        If you enable auto-adjust, the app reads ambient light sensor values in real time to adjust brightness and filter strength. These readings are not stored or transmitted. The sensor data is processed entirely on your device and used only to provide the auto-adjustment feature. You can disable this feature at any time in the app settings.
                     </p>
                     
                     <p class="privacy-card-text"><strong>We do NOT collect or transmit:</strong></p>
                     <ul class="privacy-card-list">
                         <li>Names, email addresses, phone numbers, contacts, photos, videos, or files</li>
-                        <li>Precise GPS location</li>
+                        <li>Location data (GPS or network-based)</li>
                         <li>App usage outside of Eye Guard - Blue Light Filter or browsing history</li>
                         <li>Financial information or payment data</li>
                         <li>Screen content or screenshots</li>
                         <li>Advertising identifiers</li>
                         <li>Analytics, crash reports, or diagnostics to third parties</li>
+                        <li>Any personal identification information</li>
                     </ul>
                 </div>
 
@@ -97,9 +92,9 @@
                     </h3>
                     <ul class="privacy-card-list">
                         <li><strong>App functionality:</strong> Provide screen dimming and blue light filtering via an on-screen overlay.</li>
-                        <li><strong>Personalization:</strong> Remember your preferences, presets, and theme.</li>
-                        <li><strong>Scheduling:</strong> Turn the overlay on/off at times you select or around sunrise/sunset.</li>
-                        <li><strong>Notifications:</strong> Show a persistent notification that lets you toggle Eye Guard - Blue Light Filter.</li>
+                        <li><strong>Personalization:</strong> Remember your preferences, presets, and filter settings.</li>
+                        <li><strong>Auto-adjustment:</strong> Automatically adjust the screen filter based on ambient light conditions (if enabled).</li>
+                        <li><strong>Notifications:</strong> Show a persistent notification that lets you toggle Eye Guard - Blue Light Filter on or off.</li>
                         <li><strong>Performance:</strong> Operate the foreground service needed for a reliable overlay.</li>
                     </ul>
                 </div>
@@ -116,12 +111,12 @@
                     
                     <p class="privacy-card-text"><strong>Local Storage:</strong></p>
                     <p class="privacy-card-text">
-                        Your preferences are stored locally using Android SharedPreferences. We do not operate any backend that stores your personal data. If your device backup is enabled, the operating system may include app preferences in device backups per system settings.
+                        Your preferences are stored locally using Android SharedPreferences. We do not operate any backend that stores your personal data. All data is stored in your device's private app storage area, accessible only by the Eye Guard - Blue Light Filter app. If your device backup is enabled, the operating system may include app preferences in device backups per system settings.
                     </p>
                     
                     <p class="privacy-card-text"><strong>Security:</strong></p>
                     <p class="privacy-card-text">
-                        Android provides app sandboxing and OS-level protections. Eye Guard - Blue Light Filter does not implement additional encryption for SharedPreferences because it does not store sensitive personal data. Always keep your device updated and protected.
+                        Android provides app sandboxing and OS-level protections. Eye Guard - Blue Light Filter does not implement additional encryption for SharedPreferences because it does not store sensitive personal data. All data is stored in Android's secure, sandboxed storage. No data is transmitted over the internet, and the app does not require an internet connection to function. Always keep your device updated and protected.
                     </p>
                 </div>
 
@@ -134,12 +129,9 @@
                         Permissions We Request and Why
                     </h3>
                     <ul class="privacy-card-list">
-                        <li><strong>SYSTEM_ALERT_WINDOW:</strong> To display the screen overlay for dimming and filtering.</li>
-                        <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_SPECIAL_USE:</strong> To run the overlay continuously and reliably in the foreground.</li>
-                        <li><strong>POST_NOTIFICATIONS (Android 13+):</strong> To show a persistent control notification (optional but recommended).</li>
-                        <li><strong>RECEIVE_BOOT_COMPLETED:</strong> To restore your chosen state and reschedule timers after device restart.</li>
-                        <li><strong>SCHEDULE_EXACT_ALARM (Android 12+):</strong> To switch the overlay on/off at exact times when scheduling is enabled.</li>
-                        <li><strong>ACCESS_COARSE_LOCATION (optional):</strong> Only used to estimate sunrise/sunset when you enable that scheduling mode; not stored or transmitted.</li>
+                        <li><strong>SYSTEM_ALERT_WINDOW:</strong> To display the screen overlay for dimming and filtering. This permission is requested only when you attempt to enable the blue light filter feature. We use this permission solely to draw the screen filter overlay. We do not access, read, or interact with content from other apps.</li>
+                        <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_SPECIAL_USE:</strong> To run the overlay continuously and reliably in the foreground. The foreground service runs only when the night screen is enabled and stops automatically when you disable it.</li>
+                        <li><strong>POST_NOTIFICATIONS (Android 13+):</strong> To show a persistent control notification that allows you to toggle Eye Guard - Blue Light Filter on or off. We only use this permission to show the foreground service notification. We do not send promotional notifications or any other types of notifications.</li>
                     </ul>
                     <p class="privacy-card-text">
                         Permissions are used solely to deliver core functionality. We do not use them for tracking or advertising.
@@ -157,7 +149,7 @@
                         Third-Party Services
                     </h3>
                     <p class="privacy-card-text">
-                        Eye Guard - Blue Light Filter does not include advertising SDKs, analytics SDKs, or crash reporting SDKs. Distribution and updates are provided by Google Play.
+                        Eye Guard - Blue Light Filter does not include advertising SDKs, analytics SDKs, or crash reporting SDKs. The app does not integrate with any third-party services, analytics platforms, advertising networks, or external APIs. The app operates entirely independently and does not communicate with external servers. Distribution and updates are provided by Google Play.
                     </p>
                 </div>
 
@@ -169,7 +161,7 @@
                         Data Sharing
                     </h3>
                     <p class="privacy-card-text">
-                        We do not sell or share your personal data. We may disclose information if required by law or to protect our rights.
+                        We do not sell or share your personal data. We do not use third-party analytics services, advertising networks, or any other services that would collect or process your information. Since all data is stored locally on your device and we do not collect personal information, there is no data to share. We may disclose information if required by law or to protect our rights.
                     </p>
                 </div>
 
@@ -182,7 +174,8 @@
                     </h3>
                     <ul class="privacy-card-list">
                         <li><strong>Settings:</strong> Change any preference within the app at any time.</li>
-                        <li><strong>Permissions:</strong> Grant or revoke runtime permissions in Android settings.</li>
+                        <li><strong>Permissions:</strong> Grant or revoke runtime permissions in Android settings. The overlay permission is requested only when you try to enable the night screen feature.</li>
+                        <li><strong>Auto-adjust:</strong> Enable or disable the auto-adjustment feature at any time in the app settings.</li>
                         <li><strong>Clear data:</strong> Clear app data in system settings to reset to defaults.</li>
                         <li><strong>Uninstall:</strong> Remove the app to delete all local data.</li>
                     </ul>
@@ -196,7 +189,7 @@
                         Children's Privacy
                     </h3>
                     <p class="privacy-card-text">
-                        Eye Guard - Blue Light Filter is not intended for children under 13. We do not knowingly collect personal information from children.
+                        Eye Guard - Blue Light Filter is safe for users of all ages. Since we do not collect any personal information or require user accounts, there are no special privacy concerns for children. The app can be used by anyone without any privacy risks.
                     </p>
                 </div>
 
@@ -211,7 +204,7 @@
                         International Users
                     </h3>
                     <p class="privacy-card-text">
-                        Eye Guard - Blue Light Filter is operated from India. The app processes data locally on your device and does not transmit your personal data to our servers.
+                        Eye Guard - Blue Light Filter is designed to comply with privacy laws worldwide, including the General Data Protection Regulation (GDPR) in the European Union, the California Consumer Privacy Act (CCPA) in the United States, and other applicable privacy regulations. Since we do not collect, process, or store personal information, the app inherently complies with these regulations. The app processes data locally on your device and does not transmit your personal data to our servers.
                     </p>
                 </div>
 
@@ -223,7 +216,7 @@
                         Changes to This Policy
                     </h3>
                     <p class="privacy-card-text">
-                        We may update this policy as the app evolves. Significant changes will be reflected by updating the date below and, where appropriate, via an in-app notice.
+                        We may update this policy as the app evolves. Significant changes will be reflected by updating the date below and, where appropriate, via an in-app notice. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
                     </p>
                 </div>
 
@@ -239,15 +232,24 @@
                         <strong>Developer:</strong> Adobix Tech<br>
                         <strong>Email:</strong> adobixtech@gmail.com<br>
                         <strong>App:</strong> Eye Guard - Blue Light Filter<br>
-                        <strong>Last Updated:</strong> August 2025
+                        <strong>Package:</strong> com.tool.eyeshieldpro<br>
+                        <strong>Last Updated:</strong> <span id="currentDate"></span>
                     </p>
                     <p class="privacy-card-text">
-                        This Privacy Policy is effective as of the date above.
+                        This Privacy Policy is effective as of the date above. If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at the email address provided above.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        });
+    </script>
+</body>
 </html>
